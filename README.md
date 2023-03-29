@@ -61,7 +61,7 @@ func GetNextUsers(nextPageToken *string) func(ctx context.Context) (items []stri
 		}
 	}
 }
-func ExamplePagination() {
+func ExampleIterator_Pagination() {
 	var nextPageToken string
 	iter := batchiterator.Iterator[string]{
 		NextBatchFunc: batchiterator.RateLimit(

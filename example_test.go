@@ -15,7 +15,7 @@ import (
 	"golang.org/x/time/rate"
 )
 
-func ExampleSQLIterator() {
+func ExampleIterator_SQL() {
 	db, err := sql.Open("sqlite", ":memory:")
 	if err != nil {
 		log.Print(err)
@@ -101,7 +101,7 @@ func GetNextUsers(nextPageToken *string) func(ctx context.Context) (items []stri
 	}
 }
 
-func ExamplePagination() {
+func ExampleIterator_Pagination() {
 	var nextPageToken string
 	iter := batchiterator.Iterator[string]{
 		NextBatchFunc: batchiterator.RateLimit(
@@ -119,7 +119,7 @@ func ExamplePagination() {
 }
 
 func TestExamples(*testing.T) {
-	ExampleSQLIterator()
+	ExampleIterator_SQL()
 
 	mux := http.NewServeMux()
 	server := http.Server{
@@ -152,5 +152,5 @@ func TestExamples(*testing.T) {
 	}()
 	defer server.Shutdown(context.Background())
 
-	ExamplePagination()
+	ExampleIterator_Pagination()
 }
