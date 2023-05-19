@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/glebarez/go-sqlite v1.21.1
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.3
 	golang.org/x/time v0.3.0
 )
 
