@@ -1,11 +1,11 @@
 module github.com/Eun/go-batch-iterator
 
-go 1.18
+go 1.24.0
 
 require (
 	github.com/glebarez/go-sqlite v1.21.2
 	github.com/stretchr/testify v1.10.0
-	golang.org/x/time v0.10.0
+	golang.org/x/time v0.13.0
 )
 
 require (
